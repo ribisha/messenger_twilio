@@ -119,7 +119,7 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-config = Config(RepositoryEnv('cre.env'))
+config = Config(RepositoryEnv('.env'))
 
 
 TWILIO_ACCOUNT_SID = config('TWILIO_ACCOUNT_SID')
