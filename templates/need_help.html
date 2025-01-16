@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Need Help?</title>
+    <link rel="stylesheet" href="need_help.css">
+</head>
+<body style="background-color: #f5dee0;">
+    <a href="/" style="position: absolute; top: 10px; left: 10px; font-size: 0.9rem; text-decoration: none; color: #e21150; padding: 5px 10px; border: 1px solid #e21150; border-radius: 4px; transition: background-color 0.3s ease, color 0.3s ease;" onmouseover="this.style.backgroundColor='#e21150';this.style.color='#fff';" onmouseout="this.style.backgroundColor='transparent';this.style.color='#e21150';">
+       back Home
+    </a>
+<br><br>
+    <h1>Need Help?</h1>
+    <p>This project leverages <strong>Twilio</strong> to send messages directly to WhatsApp contacts and groups without opening the WhatsApp interface. However, certain limitations apply due to account restrictions.</p>
+
+    <h2>Features</h2>
+    <ul>
+        <li><strong>Send to Individuals:</strong> Messages can be sent directly to specific WhatsApp numbers.</li>
+        <li><strong>Send to Groups:</strong> Messages can be sent to WhatsApp groups using their invite link.</li>
+    </ul>
+
+    <h2>Important Notes</h2>
+    <div class="important">
+        <strong>1. Twilio Sandbox Requirement:</strong>
+        <ul>
+            <li>Twilio requires recipients to join its <span class="highlight">sandbox environment</span> before they can receive messages.</li>
+            <li>Recipients must send the code <span class="code">join national-western</span> to Twilio's WhatsApp number: <span class="code">+1 415 523 8886</span>.</li>
+        </ul>
+        <strong>2. Group Messaging:</strong>
+        <ul>
+            <li>To send a message to a WhatsApp group, use the group’s invite link.</li>
+            <li>Extract the group invite code from the link. For example:
+                <ul>
+                    <li>Invite Link: <span class="code">https://chat.whatsapp.com/your_group_invite_code</span></li>
+                    <li>Invite Code: <span class="code">your_group_invite_code</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <h2>Limitations</h2>
+    <ul>
+        <li>Messages can only be sent to recipients who have joined the Twilio sandbox environment.</li>
+        <li>Group messaging functionality requires the group invite code to be extracted manually from the invite link.</li>
+        <li>These restrictions exist due to the free-tier limitations of the Twilio account.</li>
+    </ul>
+
+    <h2>Example Usage</h2>
+    <h3>Individual Messaging</h3>
+    <ol>
+        <li>The recipient sends the code <span class="code">join national-western</span> to <span class="code">+1 415 523 8886</span> to join the Twilio sandbox.</li>
+        <li>Once joined, use the provided interface to send messages directly.</li>
+    </ol>
+
+    <h3>Group Messaging</h3>
+    <ol>
+        <li>Obtain the WhatsApp group invite link.</li>
+        <li>Extract the group invite code from the link. For example:
+            <ul>
+                <li>Invite Link: <span class="code">https://chat.whatsapp.com/your_group_invite_code</span></li>
+                <li>Invite Code: <span class="code">your_group_invite_code</span></li>
+            </ul>
+        </li>
+        <li>Input the invite code into the interface and send your message.</li>
+    </ol>
+
+    <h2>Additional Information</h2>
+    <p>This project demonstrates Twilio's capabilities for automated WhatsApp messaging. Upgrade to a full Twilio account to remove sandbox restrictions and unlock additional features.</p>
+</body>
+</html>

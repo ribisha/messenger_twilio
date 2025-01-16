@@ -1,0 +1,58 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <a href="need_help" style="position: absolute; top: 10px; left: 10px; font-size: 0.9rem; text-decoration: none; color: #e21150; padding: 5px 10px; border: 1px solid #e21150; border-radius: 4px; transition: background-color 0.3s ease, color 0.3s ease;" onmouseover="this.style.backgroundColor='#e21150';this.style.color='#fff';" onmouseout="this.style.backgroundColor='transparent';this.style.color='#e21150';">
+        Need Help?
+    </a>
+    <br><br><br>
+    <h1>Messenger</h1>
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+
+        
+            <select name="message_type" id="message_type" required>
+                <option value="person">--Select an option--</option>
+                <option value="person">Personal Chat</option>
+                <option value="group">Group Chat</option>
+            </select>
+
+            <div id="personal-section">
+                <input type="text" name="phone_number" placeholder="Enter phone number with country code (+91)">
+            </div>
+
+            <div id="group-section" style="display: none;">
+                <input type="text" name="group_id" placeholder="Group link or Group ID">
+            </div>
+
+            <textarea name="message" placeholder="Enter your message here" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        const messageTypeSelect = document.querySelector('#message_type');
+        const personalSection = document.getElementById('personal-section');
+        const groupSection = document.getElementById('group-section');
+
+        messageTypeSelect.addEventListener('change', function () {
+            if (this.value === 'person') {
+                personalSection.style.display = 'block';
+                groupSection.style.display = 'none';
+            } else if (this.value === 'group') {
+                personalSection.style.display = 'none';
+                groupSection.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
